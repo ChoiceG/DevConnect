@@ -4,8 +4,6 @@ source "https://rubygems.org"
 gem "rails", "~> 8.0.1"
 # The modern asset pipeline for Rails [https://github.com/rails/propshaft]
 gem "propshaft"
-# Use postgresql as the database for Active Record
-gem "pg", "~> 1.1"
 # Use the Puma web server [https://github.com/puma/puma]
 gem "puma", ">= 5.0"
 # Use JavaScript with ESM import maps [https://github.com/rails/importmap-rails]
@@ -16,6 +14,10 @@ gem "turbo-rails"
 gem "stimulus-rails"
 # Build JSON APIs with ease [https://github.com/rails/jbuilder]
 gem "jbuilder"
+# Use bootstrap to style app
+gem "bootstrap"
+# Use to install bootstrap successfully
+gem "sassc-rails"
 
 # Use Active Model has_secure_password [https://guides.rubyonrails.org/active_model_basics.html#securepassword]
 # gem "bcrypt", "~> 3.1.7"
@@ -56,8 +58,19 @@ group :development do
   gem "web-console"
 end
 
+group :production do
+  # Use postgresql as the database for Active Record
+  gem "pg", "~> 1.1"
+end
+
 group :test do
   # Use system testing [https://guides.rubyonrails.org/testing.html#system-testing]
   gem "capybara"
   gem "selenium-webdriver"
 end
+
+# Ruby version
+ruby "3.3.6"
+
+# Use to load ruby on rails
+gem "webrick", "1.9"

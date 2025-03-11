@@ -8,3 +8,9 @@
  *
  * Consider organizing styles into separate files for maintainability.
  */
+
+@import "bootstrap";
+
+body {
+    font-family: "Inter", sans-serif;
+}
