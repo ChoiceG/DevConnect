@@ -20,6 +20,8 @@ gem "bootstrap"
 gem "sassc-rails"
 # Use fontawesome to add icons
 gem "font-awesome-sass"
+# Use to display table well in console
+gem "hirb", "0.7.3"
 
 # Use Active Model has_secure_password [https://guides.rubyonrails.org/active_model_basics.html#securepassword]
 # gem "bcrypt", "~> 3.1.7"
