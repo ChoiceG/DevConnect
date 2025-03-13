@@ -3,7 +3,7 @@
         <h3 class=" text-center">Contact Us</h3>
 
         <div class="col-md-4 offset-md-4">
-            <%= form_with local: true do |f| %>
+            <%= form_with model: @contact, local: true do |f| %>
             <div class=" form-group">
                 <%= f.label :name %>
                 <%= f.text_field :name, class: 'form-control', placeholder: 'Enter name' %>
