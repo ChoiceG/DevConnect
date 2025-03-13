@@ -17,7 +17,7 @@ class ContactsController < ApplicationController
           body = params[:contact][:comments]
 
           # Plus variables into the Contact Mailer email Method and send email
-          # ContactMailer.contact_email(name, email, body).deliver
+          ContactMailer.contact_email(name, email, body).deliver
 
           # Store success message in flash hash
           # and redirect to the new action
