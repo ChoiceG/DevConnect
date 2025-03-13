@@ -1,7 +1,8 @@
 Rails.application.routes.draw do
-  resources :contacts 
   root to: "pages#home"
-  get "pages/about"
+  get "about", to: "pages#about"
+  resources :contacts, only: [ :create ]  
+  get "contact-us", to: "contacts#new"
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
 
   # Reveal health status on /up that returns 200 if the app boots with no exceptions, otherwise 500.
