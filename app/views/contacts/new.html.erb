@@ -1,2 +1,29 @@
-<h1>Contacts#new</h1>
-<p>Find me in app/views/contacts/new.html.erb</p>
+<div class="container-fluid">
+    <div class="row">
+        <h3 class=" text-center">Contact Us</h3>
+
+        <div class="col-md-4 offset-md-4">
+            <%= form_with local: true do |f| %>
+            <div class=" form-group">
+                <%= f.label :name %>
+                <%= f.text_field :name, class: 'form-control', placeholder: 'Enter name' %>
+            </div> <br>
+
+            <div class="form-group">
+                <%= f.label :email %>
+                <%= f.text_field :email, class: 'form-control', placeholder: 'Enter email'  %>
+            </div> <br>
+
+            <div class="form-group">
+                <%= f.label :comments %>
+                <%= f.text_area :comments, class: 'form-control', placeholder: 'Add comment here..' , rows: '3' %>
+            </div> <br>
+
+            <div class="form-group">
+                <%= f.submit "Submit", disable_with: 'Submiting...', class: 'btn btn-primary' %>
+            </div>
+
+            <% end %>
+        </div>
+    </div>
+</div>
