@@ -22,13 +22,13 @@ class ContactsController < ApplicationController
           # Store success message in flash hash
           # and redirect to the new action
           flash[:success] = "Message sent."
-          redirect_to new_contact_path
+          redirect_to contacts_path
       else
           # If Contact Object doesn't save
           # Store errors in flash hash
           # and redirect to the new action
           flash[:danger] = @contact.errors.full_messages.join(", ")
-          redirect_to new_contact_path
+          redirect_to contacts_path
       end
   end
 
