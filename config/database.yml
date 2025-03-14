@@ -85,8 +85,6 @@ production:
   primary: &primary_production
     <<: *default
     database: dev_connect_production
-    username: dev_connect
-    password: <%= ENV["DEV_CONNECT_DATABASE_PASSWORD"] %>
     RAILS_SECRET_KEY: <%= ENV["SECRET_KEY_BASE"] %>
   cache:
     <<: *primary_production
