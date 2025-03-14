@@ -9,7 +9,7 @@ ActionMailer::Base.smtp_settings ={
   address: "smtp.mailgun.org",
   username: ENV["MAILGUN_SMTP_LOGIN"],
   password: ENV["MAILGUN_SMTP_PASSWORD"],
-  domain: "https://devconnect.onrender.com/",
+  domain: "https://devconnect-raha.onrender.com/",
   authentication: :plain
 }
 ActionMailer::Base.delivery_method = :smtp
