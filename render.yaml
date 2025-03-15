@@ -1,6 +1,6 @@
 databases:
   - name: DevConnect
-    databaseName: deevmatch
+    databaseName: devconnect
     user: devconnect
     plan: free
 
@@ -9,7 +9,7 @@ services:
     name: DevConnect
     runtime: ruby
     plan: free
-    buildCommand: "./bin/render-build.sh && rails db:migrate"
+    buildCommand: "./bin/render-build.sh && bundle exec rails db:migrate"
     # preDeployCommand: "bundle exec rails db:migrate" # preDeployCommand only available on paid instance types
     startCommand: "bundle exec rails server"
     envVars:
