@@ -21,3 +21,9 @@ services:
         sync: false
       - key: WEB_CONCURRENCY
         value: 2 # sensible default
+      - key: MAILGUN_SMTP_LOGIN
+        value: "${MAILGUN_SMTP_LOGIN}"  # Use environment variable for SMTP login
+      - key: MAILGUN_SMTP_PASSWORD
+        value: "${MAILGUN_SMTP_PASSWORD}"  # Use environment variable for SMTP password
+      - key: MAILGUN_DOMAIN
+        value: "${MAILGUN_DOMAIN}"  # Use environment variable for Mailgun domain
