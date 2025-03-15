@@ -85,7 +85,8 @@ production:
   primary: &primary_production
     <<: *default
     database: dev_connect_production
-    RAILS_SECRET_KEY: <%= ENV["SECRET_KEY_BASE"] %>
+    url: <%= ENV['DATABASE_URL'] %>
+    RAILS_SECRET_KEY_BASE: <%= ENV["SECRET_KEY_BASE"] %>
   cache:
     <<: *primary_production
     database: dev_connect_production_cache
