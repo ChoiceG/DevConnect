@@ -9,7 +9,7 @@ ActionMailer::Base.smtp_settings = {
   address: "smtp.mailgun.org",
   username: ENV["MAILGUN_SMTP_USERNAME"],
   password: ENV["MAILGUN_SMTP_PASSWORD"],
-  domain: "devconnect-d0xo.onrender.com", # Correct domain (no http/https)
+  domain: "devconnect-d0xo.onrender.com", # (no http/https)
   authentication: :plain
 }
 
