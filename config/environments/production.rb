@@ -90,15 +90,34 @@ Rails.application.configure do
 
   # config.action_mailer.default_url_options = { host: 'devconnect-d0xo.onrender.com' }
 
+  # config.action_mailer.delivery_method = :smtp
+  # config.action_mailer.smtp_settings = {
+  #   address: 'smtp.mailgun.org',
+  #   port: 587,
+  #   domain: ENV['MAILGUN_DOMAIN'],
+  #   user_name: ENV['MAILGUN_SMTP_USERNAME'],
+  #   password: ENV['MAILGUN_SMTP_PASSWORD'],
+  #   authentication: 'plain',
+  #   domain: 'devconnect-d0xo.onrender.com',
+  #   enable_starttls_auto: true
+  # }
+
+  # ActionMailer configuration for Mailgun
   config.action_mailer.delivery_method = :smtp
   config.action_mailer.smtp_settings = {
     address: 'smtp.mailgun.org',
     port: 587,
-    domain: ENV['MAILGUN_DOMAIN'],
-    user_name: ENV['MAILGUN_SMTP_USERNAME'],
-    password: ENV['MAILGUN_SMTP_PASSWORD'],
-    authentication: 'plain',
-    domain: 'devconnect-d0xo.onrender.com',
+    domain: ENV["MAILGUN_DOMAIN"],  # Replace with your Mailgun domain
+    user_name: ENV["MAILGUN_SMTP_LOGIN"],  # Mailgun SMTP login
+    password: ENV["MAILGUN_SMTP_PASSWORD"],  # Mailgun SMTP password
+    authentication: :plain,
     enable_starttls_auto: true
   }
+
+  # Set default URL options for ActionMailer
+  config.action_mailer.default_url_options = { host: 'devconnect-d0xo.onrender.com' }  # Replace with your domain
+
+  # Ensure emails are sent in production
+  config.action_mailer.perform_deliveries = true
+
 end
