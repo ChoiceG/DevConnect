@@ -24,6 +24,8 @@ gem "font-awesome-sass"
 gem "hirb", "0.7.3"
 # Use to store environment variable
 gem "figaro"
+# Use devise for user authentication
+gem "devise"
 
 # Use Active Model has_secure_password [https://guides.rubyonrails.org/active_model_basics.html#securepassword]
 # gem "bcrypt", "~> 3.1.7"
