@@ -58,16 +58,23 @@ Rails.application.configure do
   # config.action_mailer.raise_delivery_errors = false
 
   # Set host to be used by links generated in mailer templates.
-  config.action_mailer.default_url_options = { host: "example.com" }
+  config.action_mailer.default_url_options = { host: "devconnect-d0xo.onrender.com" }
 
   # Specify outgoing SMTP server. Remember to add smtp/* credentials via rails credentials:edit.
-  # config.action_mailer.smtp_settings = {
-  #   user_name: Rails.application.credentials.dig(:smtp, :user_name),
-  #   password: Rails.application.credentials.dig(:smtp, :password),
-  #   address: "smtp.example.com",
-  #   port: 587,
-  #   authentication: :plain
-  # }
+  # ActionMailer configuration for Mailgun
+  config.action_mailer.delivery_method = :smtp
+  config.action_mailer.smtp_settings = {
+    address: 'smtp.mailgun.org',
+    port: 587,
+    domain: ENV["MAILGUN_DOMAIN"],  # Replace with your Mailgun domain
+    user_name: ENV["MAILGUN_SMTP_USERNAME"],  # Mailgun SMTP login
+    password: ENV["MAILGUN_SMTP_PASSWORD"],  # Mailgun SMTP password
+    authentication: :plain,
+    enable_starttls_auto: true
+  }
+
+  # Ensure emails are sent in production
+  config.action_mailer.perform_deliveries = true
 
   # Enable locale fallbacks for I18n (makes lookups for any locale fall back to
   # the I18n.default_locale when a translation cannot be found).
@@ -87,37 +94,5 @@ Rails.application.configure do
   #
   # Skip DNS rebinding protection for the default health check endpoint.
   # config.host_authorization = { exclude: ->(request) { request.path == "/up" } }
-
-  # config.action_mailer.default_url_options = { host: 'devconnect-d0xo.onrender.com' }
-
-  # config.action_mailer.delivery_method = :smtp
-  # config.action_mailer.smtp_settings = {
-  #   address: 'smtp.mailgun.org',
-  #   port: 587,
-  #   domain: ENV['MAILGUN_DOMAIN'],
-  #   user_name: ENV['MAILGUN_SMTP_USERNAME'],
-  #   password: ENV['MAILGUN_SMTP_PASSWORD'],
-  #   authentication: 'plain',
-  #   domain: 'devconnect-d0xo.onrender.com',
-  #   enable_starttls_auto: true
-  # }
-
-  # ActionMailer configuration for Mailgun
-  config.action_mailer.delivery_method = :smtp
-  config.action_mailer.smtp_settings = {
-    address: 'smtp.mailgun.org',
-    port: 587,
-    domain: ENV["MAILGUN_DOMAIN"],  # Replace with your Mailgun domain
-    user_name: ENV["MAILGUN_SMTP_LOGIN"],  # Mailgun SMTP login
-    password: ENV["MAILGUN_SMTP_PASSWORD"],  # Mailgun SMTP password
-    authentication: :plain,
-    enable_starttls_auto: true
-  }
-
-  # Set default URL options for ActionMailer
-  config.action_mailer.default_url_options = { host: 'devconnect-d0xo.onrender.com' }  # Replace with your domain
-
-  # Ensure emails are sent in production
-  config.action_mailer.perform_deliveries = true
-
+  
 end
