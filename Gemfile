@@ -26,6 +26,8 @@ gem "hirb", "0.7.3"
 gem "figaro"
 # Use devise for user authentication
 gem "devise"
+# Use Stripe for payment processing
+gem "stripe"
 
 # Use Active Model has_secure_password [https://guides.rubyonrails.org/active_model_basics.html#securepassword]
 # gem "bcrypt", "~> 3.1.7"

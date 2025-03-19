@@ -5,3 +5,5 @@
 //= link controllers/index.js
 //= link base.jpg
 //= link pro.jpg
+//= link controllers/pro_payment_controller.js
+//= link controllers/alert_controller.js

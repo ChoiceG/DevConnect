@@ -20,7 +20,10 @@
 
     <%# Includes all stylesheet files in app/assets/stylesheets %>
     <%= stylesheet_link_tag "application", "data-turbo-track": "reload" %>
+    <%#= javascript_include_tag "https://js.stripe.com/v3/", type: 'text/javascript' %>
+    <script src="https://js.stripe.com/v3/"></script>
     <%= javascript_importmap_tags %>
+    <%= tag :meta, :name => "stripe-key", :content => STRIPE_PUBLIC_KEY %>
 </head>
 
 <body>
@@ -62,11 +65,9 @@
         </div>
     </nav>
 
-    <div class="container">
-        <% flash.each do |key, value| %>
-        <div class="alert alert-<%= key == 'success' ? 'success' : 'danger' %>">
-            <%= value %>
-        </div>
+    <div class="container flash-container">
+        <% flash.each do |type, msg| %>
+        <%= content_tag :div, msg, class: "alert alert-#{type}", data: { controller: "alert", alert_target: "alert" } %>
         <% end %>
     </div>
     <%= yield %>

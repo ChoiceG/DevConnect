@@ -16,7 +16,7 @@ body {
     font-family: "Inter", sans-serif;
 }
 
-// Nav Styles
+// Background Styles
 .navbar, .home-callout{
     // Gradients provided by @i_ghosh at uiGradients.com
     background: #56CCF2;  /* fallback for old browsers */
@@ -30,46 +30,99 @@ body {
     color: white;
 }
 
-.navbar-brand,
-.navbar-nav .nav-link.active {
-  color: white;
-&:hover {
-  color: white;
-  opacity: 0.75;
-}
-}
-
-.navbar-brand{
-    font-weight: 800;
-}
-
-.home-signup-links{
-  margin-top: 30px;
-}
-
-.card{
-  margin: 0;
-  padding: 0;
-}
-
-.basic {
-  padding: 20px;
-}
-
-.card-header{
-  background-color:  #EDE4DF;
-  color: black;
-  padding: 25px;
+// Nav styles
+ .navbar {
+   border: none;
  }
-
-.pro{
-  background-color: #EDE4DF;
-  color: black;
-  padding: 25px;
-}
-
-.custom-class{
-  width: 100%;
-  height: auto;
-  border-radius: 8px;
-}
+ 
+ .navbar-brand,
+ .navbar-nav .nav-link.active {
+   color: white;
+ &:hover {
+   color: white;
+   opacity: 0.75;
+ }
+ }
+ 
+ .navbar-toggler {
+   background-color: white;
+   border: none;
+   &:hover, &:focus{
+      background-color: #ec2F4B;
+   }
+ }
+ 
+ .navbar-toggler-icon{
+   background-color: none;
+ }
+ 
+ // Styled the logo
+ .navbar-brand {
+   font-weight: 800;
+ }
+ 
+ // Home pages styles
+ .home-callout {
+   color: white;
+   padding-top: 50px;
+   padding-bottom: 50px;
+ }
+ 
+ .flash-container{
+   position: absolute;
+   top: 10%;
+ }
+ 
+ @media (min-width: 768px) {
+   .flash-container {
+       max-width: 100%;
+   }
+ }
+ 
+ .alert-notice, .alert-alert {
+   text-align: center;
+   background-color: rgba(39, 42, 218, 0.6); /* #ec2F4B with 60% opacity */
+   border-color: rgba(150, 168, 245, 0.8);
+   color:antiquewhite;
+ }
+ 
+ .home-signup-links{
+   margin-top: 30px;
+ }
+ 
+ .card{
+   margin: 0;
+   padding: 0;
+ }
+ 
+ .basic {
+   padding: 20px;
+ }
+ 
+ .card-header{
+   background-color:  #EDE4DF;
+   color: black;
+   padding: 25px;
+  }
+ 
+ .pro{
+   background-color: #EDE4DF;
+   color: black;
+   padding: 25px;
+ }
+ 
+ .custom-class{
+   width: 100%;
+   height: auto;
+   border-radius: 8px;
+ }
+ 
+ 
+ .StripeElement {
+   box-sizing: border-box; 
+   height: 40px; 
+   padding: 10px 12px; 
+   border: 1px solid #ccc; 
+   border-radius: 4px;
+   margin-bottom: 20px; 
+ }
