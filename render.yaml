@@ -21,6 +21,3 @@ services:
         sync: false
       - key: WEB_CONCURRENCY
         value: 2 # sensible default
-      - key: MAILGUN_SMTP_USERNAME
-      - key: MAILGUN_SMTP_PASSWORD
-      - key: MAILGUN_DOMAIN
