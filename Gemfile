@@ -28,6 +28,8 @@ gem "figaro"
 gem "devise"
 # Use Stripe for payment processing
 gem "stripe"
+# Use Image Processing to upload image
+gem "image_processing", ">= 1.2"
 
 # Use Active Model has_secure_password [https://guides.rubyonrails.org/active_model_basics.html#securepassword]
 # gem "bcrypt", "~> 3.1.7"
