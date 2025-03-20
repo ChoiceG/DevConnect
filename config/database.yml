@@ -87,7 +87,7 @@ production:
     <<: *default
     database: dev_connect_production
     url: <%= ENV["DATABASE_URL"] %>
-    password: "@White190"
+    password: <%= ENV["DEV_CONNECT_DATABASE_PASSWORD"] %>
   cache:
     <<: *primary_production
     database: dev_connect_production_cache
