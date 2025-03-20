@@ -1,0 +1,30 @@
+<div class="container card-structure">
+    <div class="card mb-3" style="max-width: 800px;">
+        <div class="row g-0">
+            <div class="col-md-4">
+                <% if @profile.avatar.attached? %>
+                <%= image_tag @profile.avatar, class: 'avatar-show-img' %>
+                <% else %> <p>No avatar uploaded</p>
+                <% end %>
+            </div>
+            <div class="col-md-8">
+                <div class="card-body">
+                    <h1 class="card-title"><%= @user.profile.first_name %> <%= @user.profile.last_name %></h1>
+                    <h3 class="card-title"><span class="job-title-icon"><%= job_title_icon %></span> <%= @user.profile.job_title %></h3><br>
+                    <div class="card profile-block profile-description">
+                        <h4>What's more?</h4>
+                        <h6 class="card-text"><%= @user.profile.description %></h6>
+                    </div><br>
+
+                    <% if current_user.plan_id ==2 %>
+                    <div class="card profile-block profile-contact">
+                        <h4>Contact Information:</h4>
+                        <p class="card-text"> <%= @user.profile.phone_number %></p>
+                        <p class="card-text"><%= @user.profile.contact_email %></p>
+                    </div>
+                    <% end %>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

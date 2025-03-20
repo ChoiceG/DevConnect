@@ -5,6 +5,7 @@ class User < ApplicationRecord
          :recoverable, :rememberable, :validatable
 
   belongs_to :plan
+  has_one :profile
 
   # Remove the stripe_card_token accessor since it's handled by the controller
   # attr_accessor :stripe_card_token

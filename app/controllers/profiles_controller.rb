@@ -1,0 +1,52 @@
+class ProfilesController < ApplicationController
+  before_action :authenticate_user!
+
+  def show
+    @user = User.find(params[:user_id])
+    @profile = @user.profile # or wherever the profile is attached to user
+  end
+  # GET request from /users/:user_id/profile/new
+  def new
+    # Render a blank profile details forms
+    @profile = Profile.new
+  end
+  # POST to /users/:user_id/profile
+  def create
+    # Ensure that we have the user who is filling out form
+    @user = User.find(params[:user_id])
+    # Create profile linked to this specific user
+    @profile = @user.build_profile(profile_params)
+    if @profile.save
+      flash[:success] = "Profile updated!"
+      redirect_to user_path(id: params[:user_id])
+    else
+      render action: :new
+    end
+  end
+
+  # GET request to /users/:user_id/profile/edit
+  def edit
+    @user = User.find(params[:user_id])
+    @profile = @user.profile
+  end
+
+  def update
+    # Retrieve user from the database
+    @user = User.find(params[:user_id])
+    # Retrieve user's profile
+    @profile = @user.profile
+    # Mass assign edited profile attributes and save (update)
+    if @profile.update(profile_params)
+      flash[:success] = "Profile Updated!"
+      # Redirect user to their profile page
+      redirect_to user_profile_path(id: params[:user_id])
+    else
+      render action: :edit
+    end
+  end
+
+  private
+  def profile_params
+    params.require(:profile).permit(:first_name, :last_name, :avatar, :job_title, :phone_number, :contact_email, :description)
+  end
+end

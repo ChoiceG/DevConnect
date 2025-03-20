@@ -2,8 +2,50 @@
     <h1>Welcome to DevConnect</h1>
     <h3>A membership site where developers meet with entrepreneurs and investors.</h3>
 </div>
+
 <div class="container home-signup-links">
     <div class="row">
+        <% if user_signed_in? %>
+        <div class="col-md-6">
+            <div class="card-group">
+                <div class="card">
+                    <div class="card">
+                        <h2 class=" text-center">Your Profile</h2>
+                    </div><br>
+                    <div class="card-body">
+                        <% if current_user.profile %>
+                        <div class="card text-center profile-button">
+                            <%= link_to "Edit your profile!" , edit_user_profile_path(user_id: current_user.id) , class: 'btn btn-primary btn-lg btn-block' %>
+                        </div>
+                        <div class="card text-center">
+                            <%= link_to "View your profile!", user_path(id: current_user.id), class: 'btn btn-success btn-lg btn-block' %>
+                        </div>
+                        <% else %>
+                        <p>Create your profile so that you can share your information with the community.</p>
+                        <div class="card text-center">
+                            <%= link_to "Create your profile!", new_user_profile_path(user_id: current_user.id), class: 'btn btn-primary btn-lg btn-block' %>
+                        </div>
+                        <% end %>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-6">
+            <div class="card-group">
+                <div class="card">
+                    <div class="card">
+                        <h2 class=" text-center">The Community</h2>
+                    </div><br>
+                    <div class="card-body">
+                        <h5 class="text-center">Visit the community to meet other developers, entrepreneurs, and investors!</h5>
+                        <div class="card text-center community-button">
+                            <%= link_to "Visit the community!", users_path, class: 'btn btn-success btn-lg btn-block' %>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <% else %>
         <div class=" col-md-6">
             <div class="card">
                 <h2 class="card-header text-center">Basic Membership</h2>
@@ -25,5 +67,6 @@
                 </div>
             </div>
         </div>
+        <% end %>
     </div>
 </div>

@@ -1,0 +1,41 @@
+<div class="container user-index-structure">
+    <div class="row">
+        <div class="col-md-8 offset-md-2">
+            <h1 class="text-center">DevMatch Community</h1>
+            <p class="text-center">Welcome to the DevMatch Community. Users must fill out a profile in order to be visible in the community.</p>
+            <ul class="list-unstyled">
+                <% @users.each do |user| %>
+                <% if user.profile.present? && user.profile.avatar.present? %>
+                <!-- Check for both profile and avatar -->
+                <li class="mb-4">
+                    <!-- Add margin-bottom to each list item -->
+                    <div class="card <%= cycle('grey-bg', '')%>">
+                        <div class="row g-0">
+                            <div class="col-sm-4 d-flex justify-content-center align-items-center">
+                                <%= link_to user_profile_path(user) do %>
+                                <%= image_tag rails_blob_path(user.profile.avatar, only_path: true), class: 'user-index-avatar' %>
+                                <% end %>
+                            </div>
+                            <div class="col-sm-8 user-index-name-title">
+                                <%= link_to user_profile_path(user) do %>
+                                <h2><%= user.profile.first_name %> <%= user.profile.last_name %></h2>
+                                <% end %>
+                                <p>
+                                    <%= user.profile.job_title %>
+                                    <% if user.plan_id == 2 %>
+                                    <span class="badge bg-danger">PRO</span>
+                                    <% else %>
+                                    <span class="badge bg-primary">BASIC</span>
+                                    <% end %>
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </li>
+                <% end %>
+                <!-- Only display user if profile and avatar are present -->
+                <% end %>
+            </ul>
+        </div>
+    </div>
+</div>
