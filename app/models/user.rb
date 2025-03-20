@@ -17,4 +17,8 @@ class User < ApplicationRecord
   attr_accessor :stripe_card_token
   attr_accessor :stripe_customer_token
   attr_accessor :stripe_subscription_id
+
+  def admin?
+    self.admin == true
+  end
 end
