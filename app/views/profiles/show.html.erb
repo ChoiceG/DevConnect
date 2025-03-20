@@ -3,8 +3,9 @@
         <div class="row g-0">
             <div class="col-md-4">
                 <% if @profile.avatar.attached? %>
-                <%= image_tag @profile.avatar, class: 'avatar-show-img' %>
-                <% else %> <p>No avatar uploaded</p>
+                <%= image_tag @profile.avatar.variant(resize_to_limit: [100, 100]), class: 'avatar-show-img' if @profile.avatar.attached? %>
+                <% else %>
+                <p>No avatar uploaded</p>
                 <% end %>
             </div>
             <div class="col-md-8">

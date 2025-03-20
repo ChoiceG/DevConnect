@@ -11,14 +11,15 @@ body {
 }
 
 .avatar-show-img{
-    width: 200px;
-    height: 200px;
+    max-width: 200px;
+    max-height: 200px;
     padding: 10px;
+    object-fit: cover;
 }
 
 .job-title-icon{
     display: inline-block;
-    width: 40x;
+    width: 40px;
     height: 40px;
     border: 2px solid #2e6da4;
     border-radius: 4px;
