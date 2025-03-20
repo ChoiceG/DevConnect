@@ -1,0 +1,79 @@
+body {
+    font-family: "Open Sans", sans-serif;
+ }
+
+.card.profile-button{
+    margin-bottom: 10px;
+}
+
+.card.community-button{
+    margin-top: 12px;
+}
+
+.avatar-show-img{
+    width: 200px;
+    height: 200px;
+    padding: 10px;
+}
+
+.job-title-icon{
+    display: inline-block;
+    width: 40x;
+    height: 40px;
+    border: 2px solid #2e6da4;
+    border-radius: 4px;
+    background-color: #337ab7;
+    color: white;
+    text-align: center;
+}
+
+.container.card-structure{
+    margin-top: 30px;
+}
+
+.card.profile-block{
+    color: white;
+    h4, h6 {
+        padding: 10px;
+    }
+    P {
+        margin-top: 0;
+        margin-bottom: 0;
+        margin-left: 10px;
+    }
+}
+
+.card.profile-description{
+    background-color: #5cb85c;
+    border-color: #4cae4c;
+}
+
+.card.profile-contact{
+    background-color: #5bc0de;
+    border-color: #46bad8 ;
+}
+
+// These are for our user index page styles
+.user-index-avatar{
+    width: 100%;
+    height: auto;
+    max-width: 200px; /* Adjust the max width as needed */
+    border-radius: 50%; /* Optional: If you want a circular avatar */
+}
+
+.container.user-index-structure{
+    margin-top: 20px;
+}
+
+.card.grey-bg{
+    background-color: #D3D3D3;
+}
+
+.user-index-name-title{
+    margin-top: 40px;
+}
+
+.col-sm-8 {
+    text-align: justify; /* Center text */
+    padding-left: 30px;
+ }
