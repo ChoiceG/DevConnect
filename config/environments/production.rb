@@ -96,6 +96,6 @@ Rails.application.configure do
   # config.host_authorization = { exclude: ->(request) { request.path == "/up" } }
 
   #  Store files in AWS
-  config.active_storage.service = :amazon
+  config.active_storage.service = :amazon # Use the 'amazon' service from storage.yml
   
 end
