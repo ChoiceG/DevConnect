@@ -2,9 +2,5 @@
 APP_PATH = File.expand_path("../config/application", __dir__)
 require_relative "../config/boot"
 require "rails/commands"
-aws:
-  access_key_id: AKIAQQABDEL6BNHAOMNS
-  secret_access_key: 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
-  region: eu-north-1
-  bucket: mydevmatch
+
 
