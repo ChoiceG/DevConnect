@@ -17,7 +17,6 @@ amazon:
   secret_access_key: <%= Rails.application.credentials.dig(:aws, :secret_access_key) %>
   region: <%= ENV['AWS_REGION'] %>
   bucket: <%= ENV['AWS_BUCKET_NAME'] %>
-  prefix: site2/ 
 
 # Remember not to checkin your GCS keyfile to a repository
 # google:
