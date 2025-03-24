@@ -6,12 +6,11 @@ DevConnect is a full-stack web application designed to help users create and man
 3. Features
 4. Setup Instructions
 5. Configuration
-6. Database Setup
-7. Running the Application Locally
-8. Running the Test Suite
-9. Deployment Instructions (Render)
-10. Contributing
-11. License
+6. Running the Application Locally
+7. Running the Test Suite
+8. Deployment Instructions (Render)
+9. Contributing
+10. License
 
 **Introduction**
 DevConnect is a platform that allows users to build and manage their professional profiles with various access levels. It offers the following features:
